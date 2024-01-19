@@ -2,8 +2,9 @@
     <string name="app_name">Activities And Fragments</string>
     <string name="fragment_1">Fragment 1</string>
     <string name="fragment_2">Fragment 2</string>
-    <string name="data_to_fragment_2">Data to Fragment 2</string>
-    <string name="data_to_fragment_1">Data to Fragment 1</string>
+    <string name="data_to_fragment_2">Enter Data to Fragment 2</string>
+    <string name="data_to_fragment_1">Enter Data to Fragment 1</string>
     <string name="send_data_to_fragment_1">Send Data to Fragment 1</string>
     <string name="send_data_to_fragment_2">Send Data to Fragment 2</string>
+    <string name="test_text">Test Text</string>
 </resources>
