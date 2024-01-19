@@ -39,10 +39,10 @@
         android:id="@+id/sendData1btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:text="@string/send_data_to_fragment_2"
         android:backgroundTint="@color/black"
-        android:text="Send Data to Fragment 2"
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="50dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="260dp" />
 
 </RelativeLayout>
