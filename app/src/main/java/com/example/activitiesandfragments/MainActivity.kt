@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.activitiesandfragments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var viewModel: ItemViewModelKotlin
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: ItemViewModelKotlin
+    private lateinit var fragmentManager : FragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment : Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frameLayout, fragment)
-        fragmentTransaction.commit()
+        fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment).commit()
     }
 
-    private fun changeText(){
-    }
 }
