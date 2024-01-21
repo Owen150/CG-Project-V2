@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Activities And Fragments</string>
+    <string name="app_name">Notes App</string>
     <string name="fragment_1">Fragment 1</string>
     <string name="fragment_2">Fragment 2</string>
     <string name="data_to_fragment_2">Enter Data to Fragment 2</string>

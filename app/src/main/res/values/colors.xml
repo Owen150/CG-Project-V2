@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fragment1">#44C149</color>
     <color name="fragment2">#F1AD48</color>
+    <color name="pink">#F88379</color>
+    <color name="red">#c13b34</color>
 </resources>
