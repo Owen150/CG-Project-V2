@@ -10,9 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.activitiesandfragments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
     }
 }

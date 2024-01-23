@@ -34,7 +34,7 @@
                 android:id="@+id/noteDesc"
                 android:layout_marginTop="8dp"
                 android:maxHeight="170dp"
-                android:text="Description"
+                android:text="Note Description"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/pink"/>
