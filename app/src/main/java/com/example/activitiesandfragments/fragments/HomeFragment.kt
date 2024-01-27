@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.findNavController
+import com.example.activitiesandfragments.MainActivity
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.adapter.NoteAdapter
 import com.example.activitiesandfragments.databinding.FragmentHomeBinding
@@ -32,5 +35,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
         super.onViewCreated(view, savedInstanceState)
 
         val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        noteViewModel = (activity as MainActivity).noteViewModel
+
+        binding.addNoteFab.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_addNoteFragment)
+        }
     }
 }
