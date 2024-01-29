@@ -44,6 +44,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
 
         notesViewModel = (activity as MainActivity).noteViewModel
 
+        setupHomeRecyclerView()
+
         binding.addNoteFab.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_addNoteFragment)
         }
@@ -69,7 +71,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
             adapter = noteAdapter
         }
         activity?.let {
-            notesViewModel.getAllNotes().observe(viewLifecycleOwner){   note->
+            notesViewModel.getAllNotes().observe(viewLifecycleOwner){  note->
                 noteAdapter.differ.submitList(note)
                 updateUI(note)
             }
@@ -77,15 +79,27 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
     }
 
     private fun searchNote(query: String?){
+        val searchQuery = "%$query"
 
+        notesViewModel.searchNote(searchQuery).observe(this){  list ->
+            noteAdapter.differ.submitList(list)
+        }
     }
 
     override fun onQueryTextSubmit(p0: String?): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
-    override fun onQueryTextChange(p0: String?): Boolean {
-        TODO("Not yet implemented")
+    override fun onQueryTextChange(newText: String?): Boolean {
+        if (newText != null){
+            searchNote(newText)
+        }
+        return true
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        homeBinding = null
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
