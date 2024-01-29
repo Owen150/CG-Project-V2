@@ -76,6 +76,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
         }
     }
 
+    private fun searchNote(query: String?){
+
+    }
+
     override fun onQueryTextSubmit(p0: String?): Boolean {
         TODO("Not yet implemented")
     }
@@ -94,6 +98,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 }
