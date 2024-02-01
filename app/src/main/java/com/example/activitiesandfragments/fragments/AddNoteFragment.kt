@@ -65,6 +65,11 @@ class AddNoteFragment : Fragment(R.layout.fragment_add_note), MenuProvider {
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        return false
+        return when(menuItem.itemId){
+            R.id.saveMenu ->{
+                saveNote(addNoteView)
+                true
+            } else -> false
+        }
     }
 }
