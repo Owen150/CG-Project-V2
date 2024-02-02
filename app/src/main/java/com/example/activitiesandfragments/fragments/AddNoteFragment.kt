@@ -72,4 +72,9 @@ class AddNoteFragment : Fragment(R.layout.fragment_add_note), MenuProvider {
             } else -> false
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        addNoteBinding = null
+    }
 }
