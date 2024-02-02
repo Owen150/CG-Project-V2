@@ -1,1 +1,1 @@
- An Android Notes application developed using the MVVM architecture, Room database, Live Data, and Kotlin Coroutines.
+ An Android Notes application developed in Kotlin using the MVVM architecture, Room database, Live Data, and Kotlin Coroutines.
